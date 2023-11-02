@@ -1,5 +1,7 @@
 pub struct Solution {}
 
+
+#[allow(dead_code)]
 impl Solution {
     pub fn integer_break(n: i32) -> i32 {
         let mut prod = Solution::find_prod(n, 2);

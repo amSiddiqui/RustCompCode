@@ -5,32 +5,7 @@ use std::cell::RefCell;
 use std::cmp::{max, min};
 use std::hash::{Hash, Hasher};
 use std::collections::HashMap;
-
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<ListNode>>,
-}
-
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        ListNode {
-            next: None,
-            val,
-        }
-    }
-
-    pub fn print(&self) {
-        let mut current = Some(self);
-        while let Some(node) = current {
-            print!("{} -> ", node.val);
-            current = node.next.as_deref();
-        }
-        println!("None");
-    }
-}
-
+use crate::linked_list::ListNode;
 
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
@@ -108,6 +83,7 @@ impl Memoiser {
 
 pub struct Solution {}
 
+#[allow(dead_code)]
 impl Solution {
     pub fn add_binary(a: String, b: String) -> String {
         let mut result = vec![];

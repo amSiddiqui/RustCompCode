@@ -35,21 +35,21 @@ fn main() {
     valid_paren_20::Solution::is_valid_fast(String::from("()[]{}"));
 
 
-    let list1 = Box::new(merge_list_21::ListNode {
+    let list1 = Box::new(linked_list::ListNode {
         val: 20,
-        next: Some(Box::new(merge_list_21::ListNode {
+        next: Some(Box::new(linked_list::ListNode {
             val: 32,
-            next: Some(Box::new(merge_list_21::ListNode::new(54)))
+            next: Some(Box::new(linked_list::ListNode::new(54)))
         }))
     });
 
-    let list2 = Box::new(merge_list_21::ListNode {
+    let list2 = Box::new(linked_list::ListNode {
         val: 19,
-        next: Some(Box::new(merge_list_21::ListNode {
+        next: Some(Box::new(linked_list::ListNode {
             val: 31,
-            next: Some(Box::new(merge_list_21::ListNode {
+            next: Some(Box::new(linked_list::ListNode {
                 val: 32,
-                next: Some(Box::new(merge_list_21::ListNode::new(87)))
+                next: Some(Box::new(linked_list::ListNode::new(87)))
             }))
         }))
     });

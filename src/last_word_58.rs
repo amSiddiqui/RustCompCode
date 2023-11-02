@@ -1,6 +1,6 @@
 pub struct Solution {}
 
-
+#[allow(dead_code)]
 impl Solution {
     pub fn length_of_last_word(s: String) -> i32 {
         let mut l = 0;

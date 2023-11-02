@@ -1,5 +1,6 @@
 pub struct Solution {}
 
+#[allow(dead_code)]
 impl Solution {
     pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
         let (mut l, mut h) = (0, nums.len());
