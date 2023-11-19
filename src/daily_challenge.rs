@@ -1,3 +1,5 @@
+use std::collections::BTreeMap;
+
 #[allow(dead_code)]
 pub struct Solution {}
 
@@ -54,6 +56,23 @@ impl Solution {
 
         result as _
     }
+
+    pub fn reduction_operations(nums: Vec<i32>) -> i32 {
+        let mut freq_map: BTreeMap<i32, i32> = BTreeMap::new();
+        for n in nums {
+            *freq_map.entry(n).or_insert(0) += 1;
+        }
+        if let Some((&smallest_key, _)) = freq_map.iter().next() {
+            freq_map.remove(&smallest_key);
+            let mut acc = 0;
+            for (i, (_, val)) in freq_map.iter().enumerate() {
+                acc += ((i as i32) + 1) * val;
+            }
+            acc
+        } else {
+            0
+        }
+    }
 }
 
 
@@ -98,7 +117,15 @@ mod tests {
                 println!("Failed to load content {}", e);
             }
         }
+    }
 
+    #[test]
+    fn test_reduction_operations() {
+        let arr = vec![5, 1, 3];
+        let result = Solution::reduction_operations(arr);
+        assert_eq!(result, 3);
 
+        assert_eq!(Solution::reduction_operations(vec![1, 1, 1]), 0);
+        assert_eq!(Solution::reduction_operations(vec![1, 1, 2, 2, 3]), 4);
     }
 }
