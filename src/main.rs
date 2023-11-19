@@ -13,6 +13,7 @@ mod last_word_58;
 mod medium_questions;
 mod easy_questions;
 mod linked_list;
+mod daily_challenge;
 
 fn main() {
     two_sums::Solution::two_sum(vec![2, 7, 11, 15], 9);
